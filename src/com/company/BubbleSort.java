@@ -44,6 +44,7 @@ public class BubbleSort {
         }
     }
 
+    // toString method returns sorted array
     @Override
     public String toString() {
         String arrayToPrint = "";
