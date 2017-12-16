@@ -26,24 +26,28 @@ public class SortingDriver {
         // The input array that will be used as the input array to be sorted.
         int[] inputArr = new int[]{55, 20, 7, 2};
 
-        // Bubble Sort
-        System.out.println(("Bubble Sort").toUpperCase());
-        System.out.print("Before: ");
-        System.out.println(displayUnsortedArr(inputArr));
+        // Displays unsorted original array for reference
+        System.out.println(("Unsorted Array: ").toUpperCase());
+        for (int i = 0; i < inputArr.length; i++) {
+            System.out.print(inputArr[i] + " ");
+        }
 
-        System.out.print("After: ");
+        System.out.println("");
+
+        // Bubble Sort
+        System.out.println(("Bubble Sort: ").toUpperCase());
         BubbleSort bbs = new BubbleSort(inputArr);
         bbs.sort(); // Call sort in Bubble Sort
         System.out.println(bbs.toString());
-    }
+        System.out.println("Exec time (ns): " + bbs.getDuration());
 
-    // Just returns the original unsorted array
-    private static String displayUnsortedArr(int[] arr) {
-        String arrToDisplay = "";
-        for (int i=0; i<arr.length; i++) {
-            arrToDisplay += arr[i] + " ";
-        }
-        return arrToDisplay;
+
+        // Selection Sort
+        System.out.println(("Selection Sort: ").toUpperCase());
+        SelectionSort ss = new SelectionSort(inputArr);
+        ss.sort(); // Call sort in Selection Sort
+        System.out.println(ss.toString());
+        System.out.println("Exec time (ns): " + ss.getDuration());
     }
 
 }
