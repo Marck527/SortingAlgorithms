@@ -48,6 +48,13 @@ public class SortingDriver {
         ss.sort(); // Call sort in Selection Sort
         System.out.println(ss.toString());
         System.out.println("Exec time (ns): " + ss.getDuration());
+
+        // Insertion Sort
+        System.out.println(("Insertion Sort: ").toUpperCase());
+        InsertionSort is = new InsertionSort(inputArr);
+        is.sort(); // Call sort in Insertion Sort
+        System.out.println(is.toString());
+        System.out.println("Exec time (ns): " + is.getDuration());
     }
 
 }
