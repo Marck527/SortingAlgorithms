@@ -55,6 +55,13 @@ public class SortingDriver {
         is.sort(); // Call sort in Insertion Sort
         System.out.println(is.toString());
         System.out.println("Exec time (ns): " + is.getDuration());
+
+        // Merge Sort
+        System.out.println(("Merge Sort: ").toUpperCase());
+        MergeSort ms = new MergeSort(inputArr);
+        ms.sort(); // Call sort in Insertion Sort
+        System.out.println(ms.toString());
+        System.out.println("Exec time (ns): " + ms.getDuration());
     }
 
 }

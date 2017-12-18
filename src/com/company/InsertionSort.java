@@ -16,7 +16,7 @@
 
 package com.company;
 
-public class InsertionSort {
+public class InsertionSort implements SortInterface{
     private int[] array;
     private long duration;
 

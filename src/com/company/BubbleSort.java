@@ -20,7 +20,7 @@
 
 package com.company;
 
-public class BubbleSort {
+public class BubbleSort implements SortInterface {
     private int[] array;
     private long duration;
 

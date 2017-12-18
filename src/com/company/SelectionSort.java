@@ -16,7 +16,7 @@
 
 package com.company;
 
-public class SelectionSort {
+public class SelectionSort implements SortInterface{
     private int[] array;
     private long duration;
 
