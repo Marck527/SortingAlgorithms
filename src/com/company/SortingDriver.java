@@ -41,7 +41,6 @@ public class SortingDriver {
         System.out.println(bbs.toString());
         System.out.println("Exec time (ns): " + bbs.getDuration());
 
-
         // Selection Sort
         System.out.println(("Selection Sort: ").toUpperCase());
         SelectionSort ss = new SelectionSort(inputArr);
@@ -62,6 +61,12 @@ public class SortingDriver {
         ms.sort(); // Call sort in Insertion Sort
         System.out.println(ms.toString());
         System.out.println("Exec time (ns): " + ms.getDuration());
-    }
 
+        // Quick Sort
+        System.out.println(("Quick Sort: ").toUpperCase());
+        QuickSort qs = new QuickSort(inputArr);
+        qs.sort(); // Call sort in Quick Sort
+        System.out.println(qs.toString());
+        System.out.println("Exec time (ns): " + qs.getDuration());
+    }
 }

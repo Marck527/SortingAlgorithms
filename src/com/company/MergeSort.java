@@ -50,13 +50,10 @@ public class MergeSort implements SortInterface{
 
         if (lowerIndex < higherIndex) { // If there is more than one element in the array
             int middle = lowerIndex + (higherIndex - lowerIndex) / 2; // Find the mid point by dividing by 2
-
             // Sort the left side of the array
             sortHelper(lowerIndex, middle);
-
             // Sort the right side
             sortHelper(middle + 1, higherIndex);
-
             // Merge left and right array
             merge(lowerIndex, middle, higherIndex);
         }

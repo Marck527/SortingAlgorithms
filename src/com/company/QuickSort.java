@@ -22,6 +22,10 @@ public class QuickSort implements SortInterface{
 
     @Override
     public String toString() {
-        return "MergeSort";
+        String arrayToPrint = "";
+        for (int i = 0; i < array.length; i++) {
+            arrayToPrint += array[i] + " ";
+        }
+        return arrayToPrint;
     }
 }
