@@ -1,24 +1,3 @@
-/**
- * Sort Algorithms 16/12/2017
- * Author: Marck Munoz
- *
- * This mini project is my attempt to understand some of the most basic and common
- * sorting algorithms.
- *
- * Each algorithm will have it's own class solely for that algorithm only and will
- * be called in this driver file to be executed. I will also try my best to explain
- * line by line how the algorithms works and what each line of the code does.
- *
- * The algorithms I will cover in this project will include te following below:
- *
- * 1) Bubble Sort
- * 2) Selection Sort
- * 3) Insertion Sort
- * 4) Merge Sort
- * 5) Quick Sort
- * 6) Shell Sort
- */
-
 package com.company;
 
 public class SortingDriver {

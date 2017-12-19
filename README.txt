@@ -9,7 +9,7 @@ To Do:
     2) Selection Sort ✓
     3) Insertion Sort ✓
     4) Merge Sort ✓
-    5) Quick Sort
+    5) Quick Sort ✓
     6) Shell Sort
     7) Counting Sort
     8) Radix Sort
