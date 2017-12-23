@@ -3,8 +3,9 @@ package com.company;
 public class SortingDriver {
     public static void main(String[] args) {
         // The input array that will be used as the input array to be sorted.
-        int[] inputArr = new int[]{55, 20, 7, 2};
+        int[] inputArr = new int[]{2, 13, 1, 5};
 
+        System.out.println("---------------------------------");
         // Displays unsorted original array for reference
         System.out.println(("Unsorted Array: ").toUpperCase());
         for (int i = 0; i < inputArr.length; i++) {
@@ -12,13 +13,12 @@ public class SortingDriver {
         }
 
         System.out.println("");
+        System.out.println("---------------------------------");
 
         // Bubble Sort
         System.out.println(("Bubble Sort: ").toUpperCase());
-        BubbleSort bbs = new BubbleSort(inputArr);
-        bbs.sort(); // Call sort in Bubble Sort
-        System.out.println(bbs.toString());
-        System.out.println("Exec time (ns): " + bbs.getDuration());
+        System.out.println(new BubbleSort(inputArr));
+        System.out.println("---------------------------------");
 
         // Selection Sort
         System.out.println(("Selection Sort: ").toUpperCase());
@@ -26,6 +26,7 @@ public class SortingDriver {
         ss.sort(); // Call sort in Selection Sort
         System.out.println(ss.toString());
         System.out.println("Exec time (ns): " + ss.getDuration());
+        System.out.println("---------------------------------");
 
         // Insertion Sort
         System.out.println(("Insertion Sort: ").toUpperCase());
@@ -33,6 +34,7 @@ public class SortingDriver {
         is.sort(); // Call sort in Insertion Sort
         System.out.println(is.toString());
         System.out.println("Exec time (ns): " + is.getDuration());
+        System.out.println("---------------------------------");
 
         // Merge Sort
         System.out.println(("Merge Sort: ").toUpperCase());
@@ -40,6 +42,7 @@ public class SortingDriver {
         ms.sort(); // Call sort in Insertion Sort
         System.out.println(ms.toString());
         System.out.println("Exec time (ns): " + ms.getDuration());
+        System.out.println("---------------------------------");
 
         // Quick Sort
         System.out.println(("Quick Sort: ").toUpperCase());
@@ -47,12 +50,21 @@ public class SortingDriver {
         qs.sort(); // Call sort in Quick Sort
         System.out.println(qs.toString());
         System.out.println("Exec time (ns): " + qs.getDuration());
+        System.out.println("---------------------------------");
+
 
         // Shell Sort
         System.out.println(("Shell Sort: ").toUpperCase());
-        ShellSort shells = new ShellSort(inputArr);
-        shells.sort(); // Call sort in Shell Sort
-        System.out.println(shells.toString());
-        System.out.println("Exec time (ns): " + shells.getDuration());
+        System.out.println(new ShellSort(inputArr));
+        System.out.println("---------------------------------");
+
+        // Counting Sort
+        System.out.println(("Counting Sort: ").toUpperCase());
+        System.out.println(new CountingSort(inputArr, 13));
+        System.out.println("---------------------------------");
+
+
+
+
     }
 }

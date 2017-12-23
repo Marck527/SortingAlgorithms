@@ -15,10 +15,13 @@ For each algorithm, I have written a few paragraphs which briefly explains how i
 4. Merge Sort
 5. Quick Sort
 6. Shell Sort
-7. Counting Sort (WIP)
+7. Counting Sort
 8. Radix Sort (WIP)
-9. Stack Sort (WIP)
-10. Sleep Sort (Just for fun - WIP)
+
+
+
+
+
 
 
 

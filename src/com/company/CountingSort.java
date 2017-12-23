@@ -1,37 +1,66 @@
 /**
- * Bubble Sort - O(n^2)
+ * Counting Sort
  *
- * The Bubble Sort algorithm works by comparing the value of the left element and the element to its right.
- * If the value on the left hand side is larger than its right hand side neighbor, they swap places so the
- * larger element is on the right side. Once the swap is complete, the 'pointer' or counter is incremented
- * by one so that the right hand side of the previous pair compared becomes the left hand side of this new
- * pair comparison.
+ * The Counting Sort Algorithm is not a traditional comparison sort, that is it does not compare values in the array
+ * with each other. Instead, Counting sort is an integer sorting algorithm, which means it uses integer keys to sort
+ * a collection of data.
  *
- * Once all the left and right hand pairs have been compared and swapped on the first pass, it will continue
- * the next pass (the total amount of pass will be the length of the array).
+ * Counting sort works by traversing the array and counting the number of occurrences for each of the values within the
+ * array. It then records the number of times it sees this value as the index of a seperate array (counter array) which
+ * has a range between zero and the max value of the array to be sorted.
  *
- * As you can tell, the larger values rises or 'bubbles' to the right hand side of the array. This is where
- * Bubble Sort get its name from. The larger values 'bubbles' up to the top.
+ * Note: since the counter array which keeps track of the number of occurrences of the values in the original array has
+ * a range between zero and the the max value of the array, values which do not show up in the array to be sorted are
+ * simply marked as zero because is they do not show up in the array at all.
  *
- * The time complexity of Bubble Sort is O(n^2). It is a slow algorithm and will run slower as n grows larger.
- *
- *
+ * Since the values of the array to be sorted is placed in ascending order as the index of the counter array, this is
+ * how Counting sort sorts the original array, and if it comes across a duplicate value, it simply increments that index
+ * on the counter array.
  */
 
 package com.company;
 
 public class CountingSort implements SortInterface {
     private int[] array;
+    private int maxVal; // Receives input of the maximum value of the array
     private long duration;
 
-    public CountingSort(int[] inputArr) {
+    public CountingSort(int[] inputArr, int maxVal) {
         this.array = inputArr;
+        this.maxVal = maxVal;
+
+        sort();
     }
 
-    public void sort() {
+     public void sort() {
         long startTime = System.nanoTime();
 
-        //
+        // The counter array will have a range between zero and the maximum value of the array to be sorted.
+        int[] numCounts = new int[this.maxVal + 1];
+
+        // Gets each value of the array to be sorted, use the value as the index of the numCounts array and increments the value for duplicate.
+        // Note: this is where the list gets sorted, and counts the number of its occurrence.
+        for (int num : this.array) {
+            numCounts[num]++; // e.g array to be sorted {2, 3, 2, 5} numCounts{0, 0, 2, 1, 0, 1}
+        }
+
+        // Create array which will hold the final sorted array (same length as the array to be sorted)
+        int[] sortedArray = new int[this.array.length];
+        // Keeps track of the current sorted index in the sortedArray
+        int currentSortedIndex = 0;
+
+        // Loop through each value of the numCounts
+        for(int num = 0; num < numCounts.length; num++) {
+            int count = numCounts[num]; // Set count to the number of times the value in the array appears (which numCount recorded above)
+
+            // For the number of times the value occurred
+            for (int i = 0; i < count; i++) {
+                // Add it to the sorted array
+                sortedArray[currentSortedIndex] = num;
+                currentSortedIndex++; // Increment current index
+            }
+        }
+        this.array = sortedArray; // Copy the value of sortedArray to the class field array.
 
         long endTime = System.nanoTime();
         this.duration = (endTime - startTime);
@@ -42,10 +71,12 @@ public class CountingSort implements SortInterface {
     // toString method returns sorted array
     @Override
     public String toString() {
-        String arrayToPrint = "";
-        for (int i = 0; i < array.length; i++) {
-            arrayToPrint += array[i] + " ";
+        String output = "";
+        for (int i = 0; i < this.array.length; i++) {
+            output += this.array[i] + " ";
         }
-        return arrayToPrint;
+        output += "\n";
+        output += "Exec time (ns): " + this.getDuration();
+        return output;
     }
 }
