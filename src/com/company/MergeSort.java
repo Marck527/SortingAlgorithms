@@ -1,11 +1,11 @@
 /**
  * Merge Sort - O(n log n)
  *
- * The Merge Sort algorithm is a divide and conquer algorithm. Meaning it divides the data into smaller
+ * The Merge Sort algorithm is a divide and conquer algorithm. It divides the data into smaller
  * chunks and then conquers them. It accomplishes this by using recursion, which is a method that calls
  * itself over and over again until it reaches the base case or the breaking statement.
  *
- * There are two main parts in Merge sort, sorting and merging.
+ * There are two main parts of Merge sort, sorting and merging.
  *
  * The sort method (sortHelper) starts off by taking the range of the array to sort. That is from
  * index zero the length of the array minus one.
@@ -34,22 +34,28 @@ public class MergeSort implements SortInterface{
 
     public MergeSort(int[] inputArray) {
         this.array = inputArray;
-        this.tempArr = new int[inputArray.length]; // Set the size of the temporary array to the array to be sorted
+        // Set the size of the temporary array to the array to be sorted
+        this.tempArr = new int[inputArray.length];
+
+        sort();
     }
 
     public void sort() {
         long startTime = System.nanoTime();
 
-        sortHelper(0, this.array.length - 1); // Boot strap the sort helper and pass the start and end of the array to sort
+        // Boot strap the sort helper and pass the start and end of the array
+        sortHelper(0, this.array.length - 1);
 
         long endTime = System.nanoTime();
         this.duration = (endTime - startTime);
     }
 
     private void sortHelper(int lowerIndex, int higherIndex) {
+        // Checks to see if there is more than one element in the array
+        if (lowerIndex < higherIndex) {
+            // Find the mid point by dividing by 2
+            int middle = lowerIndex + (higherIndex - lowerIndex) / 2;
 
-        if (lowerIndex < higherIndex) { // If there is more than one element in the array
-            int middle = lowerIndex + (higherIndex - lowerIndex) / 2; // Find the mid point by dividing by 2
             // Sort the left side of the array
             sortHelper(lowerIndex, middle);
             // Sort the right side
@@ -62,7 +68,7 @@ public class MergeSort implements SortInterface{
 
     // Merge method
     private void merge(int lowerIndex, int middle, int higherIndex) {
-        // Copy content of the array to be sorted to the temporary array which will get 'spliced'
+        // Copy contents of the array to be sorted to the temporary array which will get 'spliced'
         for (int i = lowerIndex; i <= higherIndex; i++) {
             this.tempArr[i] = this.array[i];
         }
@@ -75,12 +81,17 @@ public class MergeSort implements SortInterface{
         while (i <= middle && j <= higherIndex) {
             // If the value in the left array of the current iteration is less than or equal to the value in the right
             if (this.tempArr[i] <= this.tempArr[j]) {
-                this.array[k] = this.tempArr[i]; // Place the value in the left (smaller) in the original array
+                // Place the value in the left (smaller) in the original array
+                this.array[k] = this.tempArr[i];
+                // Increment left array
                 i++;
-            } else { // Right must be bigger
+            } else { // Value in the right array must be bigger
+                // Place the value in the right array in the original array
                 this.array[k] = this.tempArr[j];
+                // Increment right array
                 j++;
             }
+            // Increment the original array
             k++;
         }
 
@@ -95,10 +106,12 @@ public class MergeSort implements SortInterface{
 
     @Override
     public String toString() {
-        String arrayToPrint = "";
+        String output = "";
         for (int i = 0; i < this.array.length; i++) {
-            arrayToPrint += array[i] + " ";
+            output += this.array[i] + " ";
         }
-        return arrayToPrint;
+        output += "\n";
+        output += "Exec time (ns): " + this.getDuration();
+        return output;
     }
 }
