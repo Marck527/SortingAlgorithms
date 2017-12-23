@@ -1,21 +1,17 @@
 /**
- * Bubble Sort - O(n^2)
+ * Shell Sort - O(n^2)
  *
- * The Bubble Sort algorithm works by comparing the value of the left element and the element to its right.
- * If the value on the left hand side is larger than its right hand side neighbor, they swap places so the
- * larger element is on the right side. Once the swap is complete, the 'pointer' or counter is incremented
- * by one so that the right hand side of the previous pair compared becomes the left hand side of this new
- * pair comparison.
+ * The Shell Sort algorithm is a variation of Insertion Sort.
  *
- * Once all the left and right hand pairs have been compared and swapped on the first pass, it will continue
- * the next pass (the total amount of pass will be the length of the array).
+ * Shell Sort is different from Insertion Sort because Shell uses 'gap sort' where it sorts two elements of a certain gap
+ *  as it moves through the array. After the first pass, it will reduce this gap until it reduces it to only the gap of one
+ *  which is just Insertion Sort.
  *
- * As you can tell, the larger values rises or 'bubbles' to the right hand side of the array. This is where
- * Bubble Sort get its name from. The larger values 'bubbles' up to the top.
+ *  The advantage of doing this is it roughly sorts the array moving the larger values to the right and smaller values to the
+ *  left during the gap sort and by the time it reaches the insertion sort where the gap is only one, the array will already
+ *  be mostly sorted so smaller moves are required to fully sort the array.
  *
- * The time complexity of Bubble Sort is O(n^2). It is a slow algorithm and will run slower as n grows larger.
- *
- *
+ *  In the worst case, the time complexity of Shell Sort is O(n^2) with the best case being O(n log n).
  */
 
 package com.company;
