@@ -1,22 +1,23 @@
-Sorting Algorithms 17/12/2017
-Author: Marck Munoz
+# Sorting Algorithms
 
-To Do:
+A collection of some of the most commonly used sorting algorithms.
 
-* Implement the below algorithms:
+The purpose of this was to give me solid understanding of each sorting algorithm.
 
-    1) Bubble Sort ✓
-    2) Selection Sort ✓
-    3) Insertion Sort ✓
-    4) Merge Sort ✓
-    5) Quick Sort ✓
-    6) Shell Sort ✓ - This one took a while for me to understand
-    7) Counting Sort
-    8) Radix Sort
-    9) Stack Sort
-    10) Sleep Sort (the G.O.A.T of sorting algorithms)
+For each algorithm, I have written a few paragraphs which briefly explains how it works and also it's time complexity. Most lines of code is also commented to explain the inner workings of the algorithm.
 
-* Write a proper intro and readme
-* Explain briefly how each algorithm works and create a standard layout
-* Fix up comment to be as clear as possible
-* Fix up output
+## Algorithms Covered
+
+1. Bubble Sort
+2. Selection Sort
+3. Insertion Sort
+4. Merge Sort
+5. Quick Sort
+6. Shell Sort
+7. Counting Sort (WIP)
+8. Radix Sort (WIP)
+9. Stack Sort (WIP)
+10. Sleep Sort (Just for fun - WIP)
+
+
+
