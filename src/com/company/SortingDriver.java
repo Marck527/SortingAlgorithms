@@ -47,5 +47,12 @@ public class SortingDriver {
         qs.sort(); // Call sort in Quick Sort
         System.out.println(qs.toString());
         System.out.println("Exec time (ns): " + qs.getDuration());
+
+        // Shell Sort
+        System.out.println(("Shell Sort: ").toUpperCase());
+        ShellSort shells = new ShellSort(inputArr);
+        shells.sort(); // Call sort in Shell Sort
+        System.out.println(shells.toString());
+        System.out.println("Exec time (ns): " + shells.getDuration());
     }
 }
