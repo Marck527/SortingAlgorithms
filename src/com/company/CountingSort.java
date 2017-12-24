@@ -25,9 +25,9 @@ public class CountingSort implements SortInterface {
     private int maxVal; // Receives input of the maximum value of the array
     private long duration;
 
-    public CountingSort(int[] inputArr, int maxVal) {
+    public CountingSort(int[] inputArr) {
         this.array = inputArr;
-        this.maxVal = maxVal;
+        this.maxVal = findMax(); // Find the max value of the input array
 
         sort();
     }
@@ -67,6 +67,20 @@ public class CountingSort implements SortInterface {
     }
 
     public long getDuration() { return this.duration; }; // Divide by 1000000 to get millisecond
+
+    // Method which finds the max value of the given array
+    private int findMax() {
+        // Assume the max value is the first element
+        int max = this.array[0];
+        // Loop through the input array
+        for (int i = 0; i < this.array.length; i++) {
+            // If the current ith iteration is greater than the current max, replace current max with the value
+            if (max < this.array[i]) {
+                max = this.array[i];
+            }
+        }
+        return max;
+    }
 
     // toString method returns sorted array
     @Override
