@@ -16,7 +16,7 @@ For each algorithm, I have written a few paragraphs which briefly explains how i
 ###### 5. Quick Sort
 ###### 6. Shell Sort
 ###### 7. Counting Sort
-###### 8. Radix Sort (WIP)
+###### 8. Radix Sort
 
 ### *1). Bubble Sort - O(n^2)*
 
@@ -110,7 +110,7 @@ will only require smaller moves in the array to fully sort the array.
 
 In the worst case, the time complexity of Shell Sort is O(n^2) with the best case being O(n log n).
 
-### *7). Counting Sort - O(n^2)*
+### *7). Counting Sort - O(n+k)*
 
 The Counting Sort Algorithm is not a traditional comparison sort, that is it does not compare values in the array
 with each other. Instead, Counting sort is an integer sorting algorithm, which means it uses integer keys to sort
@@ -127,6 +127,24 @@ simply marked as zero because is they do not show up in the array at all.
 Since the values of the array to be sorted is placed in ascending order as the index of the counter array, this is
 how Counting sort sorts the original array, and if it comes across a duplicate value, it simply increments that index
 on the counter array.
+
+### *8). Radix Sort - O(n^2)*
+
+The Radix Sort a non comparative algorithm. It is a integer sorting
+algorithm which uses integer keys to sort its input.
+
+Radix sort works by firstly looking for the largest value in the array as this will determine the number
+of passes it will need to do to sort the array. So if the largest value to sort is 337, it will only need
+a total of three passes to sort because there is three digits in 337.
+
+Radix sort then sorts each value starting from the smallest place value to the largest and this will depend 
+on how many digits the largest value has. So it will sort the array using the the ones place of each number, 
+then by tens , hundreds and so on.
+
+Radix is a stable sorting algorithm which means it will sort the numbers in the same order that it was received.
+
+The time complexity of Radix is O(d*(n+b)) where d is the length of the largest digit and the number of passes 
+it will need to do. b is the range of the base. Here we are using the base 10 system so it will be 10.
 
 
 

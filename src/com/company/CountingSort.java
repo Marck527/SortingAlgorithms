@@ -1,5 +1,5 @@
 /**
- * Counting Sort
+ * Counting Sort - O(n+k)
  *
  * The Counting Sort Algorithm is not a traditional comparison sort, that is it does not compare values in the array
  * with each other. Instead, Counting sort is an integer sorting algorithm, which means it uses integer keys to sort
