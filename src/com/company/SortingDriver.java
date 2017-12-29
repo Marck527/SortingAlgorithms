@@ -73,6 +73,10 @@ public class SortingDriver {
         System.out.println(new CountingSort(inputArr));
         System.out.println("---------------------------------");
 
+//        int[] inputArr = new int[]{2, 0, 3, 1, 3};
+//        displayArr(inputArr);
+//        System.out.println();
+
         // Radix Sort
         System.out.println(("Radix Sort: ").toUpperCase());
         System.out.println(new RadixSort(inputArr));

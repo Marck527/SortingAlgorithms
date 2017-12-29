@@ -71,13 +71,14 @@ public class RadixSort implements SortInterface {
                 ++count[digit];
             }
 
-            // Starting from one, add to it the previous elements value
+            // Counts each number which is  less than or equal to it in the count array
+            // E.g for C[i], how many numbers are less than or equal to it? Place in C[i]
             for (int i = 1; i < 10; i++){
                 count[i] += count[i-1];
             }
 
-            // Starting from the end of the array, find its current digit in the count array - 1
-            // to use as the index in the output.
+            // Starting from the end of the array (to keep stability), find the value as the
+            // index of the count array to find out the position of in the output array.
             for (int i = n - 1; i >= 0; i--) {
                 int digit = (this.array[i] % mod) / divider;
                 output[count[digit] - 1] = this.array[i];
